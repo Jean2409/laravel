@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: myapp
+    env: php
+    buildCommand: "./build.sh"
+    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: tu_host_mysql
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: tu_base_datos
+      - key: DB_USERNAME
+        value: tu_usuario
+      - key: DB_PASSWORD
+        value: tu_contraseña
